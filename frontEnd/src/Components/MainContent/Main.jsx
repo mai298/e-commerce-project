@@ -84,7 +84,7 @@ return(
  if(data){
   return (
     <Container sx={{py:3}}>
-      <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"} flexWrap={"wrap"} gap={3}>
+      <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"} flexWrap={"wrap"} gap={2}>
         <Box>
 <Typography variant="h6" >Selected Products</Typography>
 <Typography variant="body1" fontWeight={300}>All our new arrivals in a exclusive brand selection</Typography>
