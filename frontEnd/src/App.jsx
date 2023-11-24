@@ -8,6 +8,7 @@ import IconSection from "./Components/Hero/IconSection";
 import Main from "./Components/MainContent/Main";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/Scroll/ScrollToTop";
+import { motion } from "framer-motion"
 
 
  
@@ -24,6 +25,11 @@ function App() {
 // @ts-ignore
         theme={theme}>
           <CssBaseline />
+
+
+          <motion.div>
+
+          </motion.div>
       <Header1/>
 <Header2/>
 <Header3/>

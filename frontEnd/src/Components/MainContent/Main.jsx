@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Rating from '@mui/material/Rating';
-import DialogTitle from '@mui/material/DialogTitle';
+import { motion } from "framer-motion";
 import Dialog from '@mui/material/Dialog';
 
 import './Main.css';
@@ -19,20 +19,23 @@ import ProductDetails from "../../Components/Product/ProductDetails";
 import { useGetproductByNameQuery } from "../../Redux/product";
 
 export default function Main() {
+ const theme=useTheme();
+    const [alignment, setAlignment] = useState('left');
+    const [clickedPro, setclickedPro] = useState({});
+    const [open, setOpen] = useState(false);
+
 
   const allProductsAPI = "products?populate=*";
-  const menCategoryAPI = "products?populate=*&filters[category][$eq]=men";
-  const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women";
+  const menCategoryAPI = "products?populate=*&filters[productCategory][$eq]=men";
+  const womenCategoryAPI = "products?populate=*&filters[productCategory][$eq]=women";
 const [productCategory, setProductCategory]=useState(allProductsAPI);
-const [clickedPro, setclickedPro] = useState({});
 
 
   const { data, error, isLoading } = useGetproductByNameQuery(
     productCategory
     )
 
-    const theme=useTheme();
-    const [alignment, setAlignment] = useState('left');
+    
 
     const handleAlignment = (event,newAlignment) => {
       if (newAlignment !== null) {
@@ -43,7 +46,6 @@ const [clickedPro, setclickedPro] = useState({});
       
     };
  
-    const [open, setOpen] = useState(false);
  
     const handleClickOpen = () => {
       setOpen(true);
@@ -71,6 +73,11 @@ return(
      
       }
     
+
+
+
+
+
 
 
 
@@ -112,10 +119,19 @@ return(
     </ToggleButtonGroup>
         </Box>
       </Stack>
+     
       <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}  flexWrap={"wrap"}>
+
       {data.data.map(item => {
   return (
-    <Card key={item.id} sx={{ maxWidth: 333, mt: 6, ":hover .MuiCardMedia-root": {
+
+    <Card component={motion.section}
+    layout
+    initial={{ transform: "scale(0)" }}
+    animate={{ transform: "scale(1)" }} 
+  
+    transition={{duration: 0.8,type:"spring"}}
+    key={item.id} sx={{ maxWidth: 333, mt: 6, ":hover .MuiCardMedia-root": {
       scale: "1.1",
       transition: ".20s",
       rotate: "1deg"
@@ -152,7 +168,8 @@ return(
     </Card>
   );
 })}
-         </Stack>
+       
+  </Stack>
          <Dialog sx={{".MuiPaper-root":{minWidth:{xs:"100%",md:800}}}} onClose={handleClose} open={open}>
                
                <IconButton 
@@ -164,7 +181,7 @@ return(
 
         <Close/>
 </IconButton>
-<ProductDetails item={clickedPro}/>
+<ProductDetails choosenProduct={clickedPro}/>
     </Dialog>
     </Container>
   )
