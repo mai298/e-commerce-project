@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
  
 
 const Footer = () => {
+  const{t}=useTranslation();
   return (
     <Box
     sx={{
@@ -19,7 +21,7 @@ const Footer = () => {
       variant="h6"
       sx={{fontSize: 18}}
     >
-      Designed and developed by
+     {t("Designed and developed by")}
       <Button
           sx={{
             mx: 0.5,
@@ -30,7 +32,7 @@ const Footer = () => {
           variant="text"
           color="primary"
         >
-          Mai Mohamed
+          {t("Mai Mohamed")}
         </Button>
       ©2023
     </Typography>

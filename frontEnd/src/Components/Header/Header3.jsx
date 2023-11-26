@@ -15,8 +15,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseIcon from '@mui/icons-material/Close';
 import Links from "./Links";
+import { useTranslation } from "react-i18next";
 
 export default function Header3() {
+
+  const { t, i18n } = useTranslation();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -67,7 +70,7 @@ export default function Header3() {
         <WindowIcon/>
         <Typography variant="body2"sx={{padding:"0",textTransform:"capitalize",mx:1}}>
 
-        Categories
+        {t("Categories")}
         </Typography>
         <Box flexGrow={1}/>
         <KeyboardArrowRightIcon/>
@@ -117,7 +120,7 @@ export default function Header3() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>{item.mainLink}</Typography>
+          <Typography>{t(item.mainLink)}</Typography>
         </AccordionSummary>
         <List sx={{py:0,my:0}}>
          
@@ -161,10 +164,10 @@ export default function Header3() {
           // @ts-ignore
           sx={{".MuiPaper-root":{width:221,bgcolor:theme.palette.myColor.main}}}
       >
-        <MenuItem onClick={handleClose}> <ElectricBikeIcon sx={{mr:1}} />  Bikes</MenuItem>
-        <MenuItem onClick={handleClose}> <LaptopIcon sx={{mr:1}}/> Electronics</MenuItem>
-        <MenuItem onClick={handleClose}><MenuBookIcon sx={{mr:1}}/> Books</MenuItem>
-        <MenuItem onClick={handleClose}> <SportsEsportsIcon sx={{mr:1}}/>Games</MenuItem>
+        <MenuItem onClick={handleClose}> <ElectricBikeIcon sx={{mr:1}} />  {t("Bikes")}</MenuItem>
+        <MenuItem onClick={handleClose}> <LaptopIcon sx={{mr:1}}/> {t("Electronics")}</MenuItem>
+        <MenuItem onClick={handleClose}><MenuBookIcon sx={{mr:1}}/> {t("Books")}</MenuItem>
+        <MenuItem onClick={handleClose}> <SportsEsportsIcon sx={{mr:1}}/>{t("Games")}</MenuItem>
 
       </Menu>
 

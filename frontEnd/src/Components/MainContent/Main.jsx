@@ -17,12 +17,14 @@ import './Main.css';
 import { Close } from "@mui/icons-material";
 import ProductDetails from "../../Components/Product/ProductDetails";
 import { useGetproductByNameQuery } from "../../Redux/product";
+import { useTranslation } from "react-i18next";
 
 export default function Main() {
  const theme=useTheme();
     const [alignment, setAlignment] = useState('left');
     const [clickedPro, setclickedPro] = useState({});
     const [open, setOpen] = useState(false);
+    const{t}=useTranslation();
 
 
   const allProductsAPI = "products?populate=*";
@@ -86,8 +88,8 @@ return(
     <Container sx={{py:3}}>
       <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"} flexWrap={"wrap"} gap={2}>
         <Box>
-<Typography variant="h6" >Selected Products</Typography>
-<Typography variant="body1" fontWeight={300}>All our new arrivals in a exclusive brand selection</Typography>
+<Typography variant="h6" >{t("Selected Products")}</Typography>
+<Typography variant="body1" fontWeight={300}>{t("All our new arrivals in a exclusive brand selection")}</Typography>
 
         </Box>
 
@@ -107,13 +109,13 @@ return(
     >
       <ToggleButton 
      sx={{color:theme.palette.text.primary}} className="myBtn" value={allProductsAPI} aria-label="left aligned">
-        All Products
+        {t("All Products")}
       </ToggleButton>
       <ToggleButton  sx={{mx:"16px !important",color:theme.palette.text.primary}} className="myBtn" value={menCategoryAPI} aria-label="centered">
-        Men Category
+        {t("Men Category")}
       </ToggleButton>
       <ToggleButton sx={{color:theme.palette.text.primary}} className="myBtn" value={womenCategoryAPI} aria-label="right aligned">
-        Women Category
+        {t("Women Category")}
       </ToggleButton>
 
     </ToggleButtonGroup>
@@ -144,26 +146,26 @@ return(
       <CardContent>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Typography variant="h6" component="div">
-            {item.attributes.productTitle}
+            {t(item.attributes.productTitle)}
           </Typography>
           <Typography variant="subtitle1" component="p">
             $ {item.attributes.productPrice}
           </Typography>
         </Stack>
         <Typography variant="body2" color="text.secondary">
-             {item.attributes.productDesc}
+             {t(item.attributes.productDesc)}
              </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
-        <Button onClick={()=>{
-          
+        <Button className="cart" onClick={()=>{
+        
           handleClickOpen()
           setclickedPro(item);
 
         }} sx={{ textTransform: "capitalize" }} size="large">
-          <AddShoppingCartIcon/> Add To Cart
+          <AddShoppingCartIcon/> {t("Add To Cart")}
         </Button>
-        <Rating precision={0.1} name="read-only" value={item.attributes.productRating} readOnly />
+        <Rating className="rate" precision={0.1} name="read-only" value={item.attributes.productRating} readOnly />
       </CardActions>
     </Card>
   );

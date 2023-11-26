@@ -17,6 +17,7 @@ import {
   import "swiper/css/pagination";
   import "./slider.css";
 import IconSection from "./IconSection";
+import { useTranslation } from "react-i18next";
   
   const mySlider = [
     { text: "MEN", link: "./assets/banner-15.jpg" },
@@ -24,6 +25,8 @@ import IconSection from "./IconSection";
   ];
   
   const Hero = () => {
+    const { t, i18n } = useTranslation();
+
     const theme = useTheme();
     return (
       <Container  >
@@ -60,7 +63,7 @@ import IconSection from "./IconSection";
                       }}
                       variant="h5"
                     >
-                      LIFESTYLE COLLECTION
+                      {t('LIFESTYLE COLLECTION')}
                     </Typography>
   
                     <Typography
@@ -71,7 +74,7 @@ import IconSection from "./IconSection";
                       }}
                       variant="h3"
                     >
-                      {item.text}
+                      {t(item.text)}
                     </Typography>
   
                     <Stack
@@ -82,10 +85,10 @@ import IconSection from "./IconSection";
                       alignItems={"center"}
                     >
                       <Typography color={"#333"} mr={1} variant="h4">
-                        SALE UP TO
+                        {t("SALE UP TO ")}
                       </Typography>
                       <Typography color={"#D23F57"} variant="h4">
-                        30% OFF
+                       {t( " 30% OFF")}
                       </Typography>
                     </Stack>
                     <Typography
@@ -96,8 +99,8 @@ import IconSection from "./IconSection";
                       }}
                       variant="body1"
                     >
-                      Get Free Shipping on orders over $99.00
-                    </Typography>
+{t("Get Free Shipping on orders over $99.00"
+)}                    </Typography>
   
                     <Button
                       sx={{
@@ -115,7 +118,7 @@ import IconSection from "./IconSection";
                       }}
                       variant="contained"
                     >
-                      shop now
+                      {t("shop now")}
                     </Button>
                   </Box>
                 </SwiperSlide>
@@ -142,7 +145,7 @@ import IconSection from "./IconSection";
                     fontSize: "18px",
                   }}
                 >
-                  NEW ARRIVALS
+                  {t("NEW ARRIVALS")}
                 </Typography>
                 <Typography
                   variant="h6"
@@ -152,7 +155,7 @@ import IconSection from "./IconSection";
                     mt: 1,
                   }}
                 >
-                  SUMMER
+                  {t("SUMMER")}
                 </Typography>
                 <Typography
                   variant="h6"
@@ -160,7 +163,7 @@ import IconSection from "./IconSection";
                     color: "#2B3445",
                   }}
                 >
-                  SALE 20% OFF
+                  {t("SALE 20% OFF")}
                 </Typography>
   
                 <Link
@@ -178,7 +181,7 @@ import IconSection from "./IconSection";
                   href="#"
                   underline="none"
                 >
-                  shop now
+                  {t("shop now")}
                   <ArrowForwardIcon sx={{ fontSize: "13px" }} />
                 </Link>
               </Stack>
@@ -202,7 +205,7 @@ import IconSection from "./IconSection";
                     fontWeight: 300,
                   }}
                 >
-                  GAMING 4K
+                  {t("GAMING 4K")}
                 </Typography>
                 <Typography
                   variant="h6"
@@ -212,7 +215,7 @@ import IconSection from "./IconSection";
                     mt: 1,
                   }}
                 >
-                  DESKTOPS &
+                  {t("DESKTOPS &")}
                 </Typography>
   
                 <Typography
@@ -221,7 +224,7 @@ import IconSection from "./IconSection";
                     color: "#2B3445",
                   }}
                 >
-                  LAPTOPS
+                 {t("LAPTOPS")}
                 </Typography>
   
                 <Link
@@ -239,7 +242,7 @@ import IconSection from "./IconSection";
                   href="#"
                   underline="none"
                 >
-                  shop now
+                  {t("shop now")}
                   <ArrowForwardIcon sx={{ fontSize: "13px" }} />
                 </Link>
               </Stack>

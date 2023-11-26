@@ -8,13 +8,16 @@ import IconSection from "./Components/Hero/IconSection";
 import Main from "./Components/MainContent/Main";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/Scroll/ScrollToTop";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { I18nextProvider } from 'react-i18next';
+import { useEffect } from "react";
+import i18n from 'i18next';
+
 
 
  
 function App() {
   const [theme, colorMode] = useMode();
-
 
   return (
     <>

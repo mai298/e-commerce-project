@@ -12,11 +12,13 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useTranslation } from 'react-i18next';
+import "./Header1.css";
 
 export default function Header1() {
     const colorMode = React.useContext(ColorModeContext);
     const theme = useTheme();
-
+    const { t, i18n } = useTranslation();
 
 
 
@@ -31,15 +33,31 @@ export default function Header1() {
       const handleClickListItem = (event) => {
         setAnchorEl(event.currentTarget);
       };
+      
+      const handleClose = () => {
+        setAnchorEl(null);
+      };
     
       const handleMenuItemClick = (event, index) => {
         setSelectedIndex(index);
         setAnchorEl(null);
+        if (index === 0) {
+          i18n.changeLanguage('ar');
+          i18n.dir("rtl")
+        } else if (index === 1) {
+          i18n.changeLanguage('en');
+          i18n.dir("en")
+        }
+
+        document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+
+        handleClose();
+
       };
     
-      const handleClose = () => {
-        setAnchorEl(null);
-      };
+      
+
+      
     
     return (
       <Box sx={{bgcolor:"#283445",borderBottomRightRadius:4,
@@ -60,8 +78,8 @@ color:"#fff"
 
 
 
-<Typography variant="body2" sx={{fontSize:"12px",fontWeight:300,color:"#fff"}}>
-  Free Express Shipping
+<Typography className='freeShip' variant="body2" sx={{fontSize:"12px",fontWeight:300,color:"#fff"}}>
+{t('free')}
 </Typography>
 
 

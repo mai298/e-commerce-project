@@ -1,8 +1,12 @@
 import { KeyboardArrowRight } from '@mui/icons-material'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import { Box, List, ListItem, ListItemButton, ListItemText, Paper, Typography } from '@mui/material'
-export default function Links({title}) {
+import { useTranslation } from 'react-i18next';
+export default function Links({title}) { 
+     const { t, i18n } = useTranslation();
+
   return (
+
     <>
      <Box
       // className="border"
@@ -15,7 +19,7 @@ export default function Links({title}) {
         alignItems: "center",
       }}
     >
-      <Typography variant="body1">{title}</Typography>
+      <Typography variant="body1">{t(title)}</Typography>
       
       <ExpandMore sx={{ fontSize: "16px", ml: 1 }} />
       <Box

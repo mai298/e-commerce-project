@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { useState } from 'react';
 import './Header2.css';
+import { useTranslation } from 'react-i18next';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -56,6 +57,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function Header2() {
 const theme=useTheme();
+const { t, i18n } = useTranslation();
+
 
   const options = [
     'All Categories',
@@ -91,8 +94,8 @@ const theme=useTheme();
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
-            <InputBase style={{paddingLeft:"50px"}}
-              placeholder="Search…"
+            <InputBase className='search' style={{paddingLeft:"50px"}}
+              placeholder={t("Search…")}
               inputProps={{ 'aria-label': 'search' }}
             />
 
@@ -110,9 +113,9 @@ const theme=useTheme();
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
         >
-          <ListItemText className='border'
+          <ListItemText 
           sx={{width:"120px",textAlign:"center","&:hover":{cursor:"pointer"}}}
-            secondary={options[selectedIndex]}
+            secondary={t(options[selectedIndex])}
           />
                     <ExpandMore sx={{fontSize:"16px",color:"grey"}}/>
 
@@ -134,7 +137,7 @@ const theme=useTheme();
             selected={index === selectedIndex}
             onClick={(event) => handleMenuItemClick(event, index)}
           >
-            {option}
+            {t(option)}
           </MenuItem>
         ))}
       </Menu>

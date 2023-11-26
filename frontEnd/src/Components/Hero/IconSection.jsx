@@ -3,20 +3,22 @@ import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import CreditScoreIcon from '@mui/icons-material/CreditScore';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import { useTranslation } from "react-i18next";
 
 
 export default function IconSection() {
-    const theme=useTheme()
+    const theme=useTheme();
+    const{t}=useTranslation();
     return(
 <Container  sx={{   mt:3,    bgcolor:theme.palette.mode==="dark"?"#000":"#fff"}}>
 <Stack direction={"row"} alignItems={"center"} sx={{flexWrap:"wrap"}} 
 divider={ useMediaQuery("(min-width:600px)")?   <Divider orientation="vertical" flexItem/> : null} >
  
 
-   <MyBox icon={<ElectricBoltIcon/>} title="Fast Delivery" subTitle="Start From $10"/>
-   <MyBox icon={<WorkspacePremiumIcon/>} title="Money Guarantee" subTitle="7 Days Back"/>
-   <MyBox icon={< AccessAlarmIcon/>} title="365 Days" subTitle="For Free Return"/>
-   <MyBox icon={<CreditScoreIcon/>} title="Payment" subTitle="Secure System"/>
+   <MyBox icon={<ElectricBoltIcon/>} title={t("Fast Delivery")} subTitle={t("Start From $10")}/>
+   <MyBox icon={<WorkspacePremiumIcon/>} title={t("Money Guarantee")} subTitle={t("7 Days Back")}/>
+   <MyBox icon={< AccessAlarmIcon/>} title={t("365 Days")} subTitle={t("For Free Return")}/>
+   <MyBox icon={<CreditScoreIcon/>} title={t("Payment")} subTitle={t("Secure System")}/>
 
  
 </Stack>

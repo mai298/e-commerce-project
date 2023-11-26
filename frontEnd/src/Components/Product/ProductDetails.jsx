@@ -1,12 +1,16 @@
 import { AddShoppingCart } from "@mui/icons-material";
 import { Box, Button, Typography, Stack, Container, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import './ProductDetails.css';
 
-export default function ProductDetails({ choosenProduct }) {
+export default function P({ choosenProduct }) {
 
   const [changedImg, setChangedImg] = useState(0);
 
   const [alignment, setAlignment] = useState();
+
+  const{t}=useTranslation();
 
   const handleAlignment = (event, newAlignment) => {
     if (newAlignment !== null) {
@@ -27,13 +31,13 @@ export default function ProductDetails({ choosenProduct }) {
         <img width={322} src={choosenProduct.attributes.productimg.data[changedImg].attributes.url} />
       </Box>
 
-      <Box sx={{py:2,width:"100%", textAlign: { xs: "center", sm: "left" } }}  >
-        <Typography variant="h5">{choosenProduct.attributes.productTitle}</Typography>
+      <Box className="pro" sx={{py:2,width:"100%", textAlign: { xs: "center", sm: "left" } }}  >
+        <Typography variant="h5">{t(choosenProduct.attributes.productTitle)}</Typography>
         <Typography my={0.4} fontSize={"22px"} color={"crimson"} variant="h6">
           $ {choosenProduct.attributes.productPrice}
         </Typography>
         <Typography variant="body1">
-          {choosenProduct.attributes.productDesc}
+          {t(choosenProduct.attributes.productDesc)}
         </Typography>
 
         <Stack sx={{ justifyContent: { xs: "center", sm: "left" } }}
@@ -78,7 +82,7 @@ export default function ProductDetails({ choosenProduct }) {
         <Button sx={{ mb: { xs: 1, sm: 0 }, textTransform: "capitalize" }}
           variant="contained">
           <AddShoppingCart sx={{ mr: 1 }} fontSize="small" />
-          Buy now
+          {t("Buy now")}
         </Button>
       </Box>
     </Box>
