@@ -19,11 +19,11 @@ export default function P({ choosenProduct }) {
   };
   return (
     <Box
+    className="card"
       sx={{
         display: "flex",
         alignItems: "center",
         gap: 2.5,
-        
         flexDirection: { xs: "column", sm: "row" },
       }}
     >
@@ -36,12 +36,12 @@ export default function P({ choosenProduct }) {
         <Typography my={0.4} fontSize={"22px"} color={"crimson"} variant="h6">
           $ {choosenProduct.attributes.productPrice}
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body1" className="cardDesc">
           {t(choosenProduct.attributes.productDesc)}
         </Typography>
 
-        <Stack sx={{ justifyContent: { xs: "center", sm: "left" } }}
-          direction={"row"} gap={1} my={2}>
+        <Stack sx={{  justifyContent: { xs: "center", sm: "left" } }}
+          direction={"row"} gap={1} my={2} >
 
           <ToggleButtonGroup
             value={alignment}

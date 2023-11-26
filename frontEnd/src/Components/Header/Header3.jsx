@@ -77,12 +77,12 @@ export default function Header3() {
       </Button>
  {useMediaQuery("(min-width:1200px)") && (
  <Stack direction={"row"} alignItems={"center"} gap={4}>
-  <Links title="Home"/>
-<Links title="Mega Menu"/>
-<Links title="Full Screen Menu"/>
-<Links title="Pages"/>
-<Links title="User Account"/>
-<Links title="Vendor Account"/></Stack>
+  <Links title={t("Home")}/>
+<Links title={t("Mega Menu")}/>
+<Links title={t("Full Screen Menu")}/>
+<Links title={t("Pages")}/>
+<Links title={t("User Account")}/>
+<Links title={t("Vendor Account")}/></Stack>
  )}
 
 
@@ -101,18 +101,19 @@ export default function Header3() {
           >     
 
           <Box sx={{width:444 ,mx:"auto",mt:6 ,position:"relative",pt:12}}>
-               <IconButton sx={{position:"absolute" ,top:0,right:10,"&:hover":{color:"red",rotate:"30deg" ,transition:".2s ease-in-out"}}} onClick={toggleDrawer("top", false)}> 
+               <IconButton sx={{position:"absolute" ,top:0,right:10,"&:hover":{color:"red",rotate:"30deg" ,
+               transition:".2s ease-in-out"}}} onClick={toggleDrawer("top", false)}> 
 
         <CloseIcon/>
 </IconButton>
 
 
-{[{mainLink:"Home",SubLink:["Link 1","Link 2" ,"Link 3"]},
-{mainLink:"Mega Menu",SubLink:["Link 1","Link 2" ,"Link 3"]},
-{mainLink:"Full Screen Menu",SubLink:["Link 1","Link 2" ,"Link 3"]},
-{mainLink:"Pages",SubLink:["Link 1","Link 2" ,"Link 3"]},
-{mainLink:"User Account",SubLink:["Link 1","Link 2" ,"Link 3"]},
-{mainLink:"Vendor Account",SubLink:["Link 1","Link 2" ,"Link 3"]}].map((item) => {
+{[{mainLink:"Home",SubLink:["Dashboard","products","orders","Profile","Add Product","Edit Product"]},
+{mainLink:"Mega Menu",SubLink:["Dashboard","products","orders","Profile","Add Product","Edit Product"]},
+{mainLink:"Full Screen Menu",SubLink:["Dashboard","products","orders","Profile","Add Product","Edit Product"]},
+{mainLink:"Pages",SubLink:["Dashboard","products","orders","Profile","Add Product","Edit Product"]},
+{mainLink:"User Account",SubLink:["Dashboard","products","orders","Profile","Add Product","Edit Product"]},
+{mainLink:"Vendor Account",SubLink:["Dashboard","products","orders","Profile","Add Product","Edit Product"]}].map((item) => {
   return(
     <Accordion key={item.mainLink} elevation={0} sx={{bgcolor:"initial"}} >
         <AccordionSummary
@@ -128,7 +129,7 @@ export default function Header3() {
         return(
           <ListItem key={subItem} sx={{py:0,my:0}} >
           <ListItemButton>
-            <ListItemText primary={subItem}/>
+            <ListItemText primary={t(subItem)}/>
           </ListItemButton>
         </ListItem >
         )

@@ -14,6 +14,13 @@ const resources = {
       "free":"شحن سريع مجاني",
       "Search…":"بحث...",
       "Home": "الرئيسية",
+      "Dashboard":"لوحة المراقبة",
+"products":"منتجات",
+"orders":"طلبات",
+"Profile":"الملف الشخصي",
+"Add Product":"أضف منتج",
+"Edit Product":"تعديل المنتج",
+
 
       'All Categories':'جميع الفئات',
       'Car':'سيارة',
@@ -114,10 +121,6 @@ const resources = {
       "Designed and developed by": "تم التصميم والتطوير بواسطة",
       "Mai Mohamed": "مي محمد",
       "©2023": "©2023"
-
-
-
-
     },
   },
 

@@ -19,7 +19,7 @@ const Footer = () => {
       alignItems={"center"}
       color={"HighlightText"}
       variant="h6"
-      sx={{fontSize: 18}}
+      sx={{fontSize: 15}}
     >
      {t("Designed and developed by")}
       <Button

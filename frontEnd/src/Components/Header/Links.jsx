@@ -54,7 +54,7 @@ export default function Links({title}) {
                         fontWeight: 300,
                       },
                     }}
-                    primary="Dashboard"
+                    primary={t("Dashboard")}
                   />
                   <Box flexGrow={1} />
                 </ListItemButton>
@@ -81,7 +81,7 @@ export default function Links({title}) {
                         fontWeight: 300,
                       },
                     }}
-                    primary="products"
+                    primary={t("products")}
                   />
                   <Box flexGrow={1} />
 
@@ -116,7 +116,7 @@ export default function Links({title}) {
                                   fontWeight: 300,
                                 },
                               }}
-                              primary="Add Product"
+                              primary={t("Add Product")}
                             />
                             <Box flexGrow={1} />
                           </ListItemButton>
@@ -137,7 +137,7 @@ export default function Links({title}) {
                                   fontWeight: 300,
                                 },
                               }}
-                              primary="Edit Product"
+                              primary={t("Edit Product")}
                             />
                             <Box flexGrow={1} />
                           </ListItemButton>
@@ -163,7 +163,7 @@ export default function Links({title}) {
                         fontWeight: 300,
                       },
                     }}
-                    primary="orders"
+                    primary={t("orders")}
                   />
                   <Box flexGrow={1} />
                 </ListItemButton>
@@ -184,7 +184,7 @@ export default function Links({title}) {
                         fontWeight: 300,
                       },
                     }}
-                    primary="Profile"
+                    primary={t("Profile")}
                   />
                   <Box flexGrow={1} />
                 </ListItemButton>

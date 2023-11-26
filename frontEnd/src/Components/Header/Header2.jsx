@@ -26,9 +26,11 @@ border: "1px solid #777",
   marginRight: theme.spacing(2),
   marginLeft: 0,
   minWidth: '266px',
+  height: "3rem !important",
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
     width: '330px',
+
   },
 }));
 
@@ -150,9 +152,11 @@ const { t, i18n } = useTranslation();
         </StyledBadge>
       </IconButton>
 
-      <IconButton>
-        <PersonIcon />
-      </IconButton></Stack>
+      <IconButton > 
+                <PersonIcon className='person'/>
+
+      </IconButton>
+      </Stack>
      
     </Container>
   )

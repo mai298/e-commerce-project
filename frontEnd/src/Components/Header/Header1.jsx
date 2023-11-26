@@ -61,7 +61,7 @@ export default function Header1() {
     
     return (
       <Box sx={{bgcolor:"#283445",borderBottomRightRadius:4,
-      borderBottomLeftRadius:4}}>
+      borderBottomLeftRadius:4,width:"100%"}}>
 
 
 <Container>
