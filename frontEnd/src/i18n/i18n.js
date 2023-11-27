@@ -20,6 +20,10 @@ const resources = {
 "Profile":"الملف الشخصي",
 "Add Product":"أضف منتج",
 "Edit Product":"تعديل المنتج",
+"Your cart is empty.":"عربة التسوق فارغة.",
+"Cart":"عربة التسوق",
+"Close":"اغلاق",
+"Remove":"حذف",
 
 
       'All Categories':'جميع الفئات',

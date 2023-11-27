@@ -4,18 +4,22 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import './ProductDetails.css';
 
-export default function P({ choosenProduct }) {
+export default function ProductDetails({ choosenProduct, addToCart }) {
 
   const [changedImg, setChangedImg] = useState(0);
 
   const [alignment, setAlignment] = useState();
 
   const{t}=useTranslation();
-
+ 
   const handleAlignment = (event, newAlignment) => {
     if (newAlignment !== null) {
       setAlignment(newAlignment);
     }
+  };
+
+  const handleBuyNow = () => {
+    addToCart(choosenProduct);
   };
   return (
     <Box
@@ -79,11 +83,16 @@ export default function P({ choosenProduct }) {
 
         </Stack>
 
-        <Button sx={{ mb: { xs: 1, sm: 0 }, textTransform: "capitalize" }}
+        <Button onClick={()=>{
+          handleBuyNow();
+          alert("item added successfully");
+        }}
+           sx={{ mb: { xs: 1, sm: 0 }, textTransform: "capitalize" }}
           variant="contained">
           <AddShoppingCart sx={{ mr: 1 }} fontSize="small" />
           {t("Buy now")}
         </Button>
+      
       </Box>
     </Box>
   )

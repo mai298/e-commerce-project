@@ -12,8 +12,12 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { useState } from 'react';
-import './Header2.css';
+import './Header2.css'; 
 import { useTranslation } from 'react-i18next';
+
+import Cart from '../Cart/Cart';
+import ProductDetails from '../Product/ProductDetails';
+import { productApi } from '../../Redux/product';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -46,20 +50,16 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    right: -3,
-    top: 13,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
-  },
-}));
 
 
 
 export default function Header2() {
+
+
+ 
 const theme=useTheme();
 const { t, i18n } = useTranslation();
+const [cartItems, setCartItems] = useState([]); // State for cart items
 
 
   const options = [
@@ -82,6 +82,14 @@ const { t, i18n } = useTranslation();
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  
+  const addToCart = (product) => {
+    setCartItems((prevItems) => {
+      const updatedItems = [...prevItems, product];
+      return updatedItems;
+    });
   };
 
   return (
@@ -146,11 +154,8 @@ const { t, i18n } = useTranslation();
           </Search>
 
 
-<Stack direction={"row"} alignItems={"center"}> <IconButton aria-label="cart">
-        <StyledBadge badgeContent={4} color="primary">
-          <ShoppingCartIcon />
-        </StyledBadge>
-      </IconButton>
+<Stack direction={"row"} alignItems={"center"}>
+  
 
       <IconButton > 
                 <PersonIcon className='person'/>

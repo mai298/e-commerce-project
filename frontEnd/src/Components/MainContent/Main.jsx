@@ -18,6 +18,7 @@ import { Close } from "@mui/icons-material";
 import ProductDetails from "../../Components/Product/ProductDetails";
 import { useGetproductByNameQuery } from "../../Redux/product";
 import { useTranslation } from "react-i18next";
+import Cart from "../Cart/Cart";
 
 export default function Main() {
  const theme=useTheme();
@@ -25,13 +26,18 @@ export default function Main() {
     const [clickedPro, setclickedPro] = useState({});
     const [open, setOpen] = useState(false);
     const{t}=useTranslation();
-
-
   const allProductsAPI = "products?populate=*";
   const menCategoryAPI = "products?populate=*&filters[productCategory][$eq]=men";
   const womenCategoryAPI = "products?populate=*&filters[productCategory][$eq]=women";
 const [productCategory, setProductCategory]=useState(allProductsAPI);
 
+const [cartItems, setCartItems] = useState([]); // State for cart items
+
+const addToCart = (product) => {
+  setCartItems(() => {
+    return [...cartItems, product];
+  });
+};
 
   const { data, error, isLoading } = useGetproductByNameQuery(
     productCategory
@@ -117,9 +123,12 @@ return(
       <ToggleButton sx={{color:theme.palette.text.primary}} className="myBtn" value={womenCategoryAPI} aria-label="right aligned">
         {t("Women Category")}
       </ToggleButton>
+           <Cart cartItems={cartItems} setCartItems={setCartItems} />
 
     </ToggleButtonGroup>
-        </Box>
+
+        </Box> 
+
       </Stack>
      
       <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}  flexWrap={"wrap"}>
@@ -183,7 +192,7 @@ return(
 
         <Close/>
 </IconButton>
-<ProductDetails choosenProduct={clickedPro}/>
+<ProductDetails choosenProduct={clickedPro} addToCart={addToCart}/>
     </Dialog>
     </Container>
   )
