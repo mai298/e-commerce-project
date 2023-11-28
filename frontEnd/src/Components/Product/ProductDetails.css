@@ -10,4 +10,18 @@
       .cardDesc{
            max-width: 25rem;
       }
+
+      [dir="rtl"] .cardDesc {
+    
+   margin-right: 150px;
+  }
+  [dir="rtl"] .cardTit {
+    
+    margin-right: 100px;
+   }
+
+   [dir="rtl"] .buy {
+    margin-bottom: 1rem;
+    
+   }
   }

@@ -96,11 +96,11 @@ const [cartItems, setCartItems] = useState([]); // State for cart items
     <Container sx={{my:3,display:"flex",justifyContent:"space-between"}}>
       <Stack alignItems={"center"}>
 <ShoppingCartOutlined/>
-<Typography variant='body2'>E-commerce</Typography>
+<Typography  variant='body2'>Ecommerce</Typography>
       </Stack>
 
 
-      <Search sx={{borderRadius:"22px" ,display:"flex",justifyContent:"space-between"}}>
+      <Search  sx={{  borderRadius:"22px" ,display:"flex",justifyContent:"space-between"}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>

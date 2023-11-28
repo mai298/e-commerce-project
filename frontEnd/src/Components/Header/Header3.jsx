@@ -100,7 +100,7 @@ export default function Header3() {
             sx={{".MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorTop.css-1sozasi-MuiPaper-root-MuiDrawer-paper":{height:"100%"}}}
           >     
 
-          <Box sx={{width:444 ,mx:"auto",mt:6 ,position:"relative",pt:12}}>
+          <Box sx={{width:333 ,mx:"auto",mt:6 ,position:"relative",pt:12}}>
                <IconButton sx={{position:"absolute" ,top:0,right:10,"&:hover":{color:"red",rotate:"30deg" ,
                transition:".2s ease-in-out"}}} onClick={toggleDrawer("top", false)}> 
 

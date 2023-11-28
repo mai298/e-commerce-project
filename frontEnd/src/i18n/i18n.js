@@ -61,8 +61,8 @@ const resources = {
       "7 Days Back": "في خلال 7 ايام ",
       "365 Days": "365 يوم",
       "For Free Return": "من أجل الإرجاع المجاني",
-      "Payment": "الدفع",
-      "Secure System": "نظام آمن",
+    "Payment":"الدفع",
+    "Secure System":"نظام أمن",
       "Selected Products": "منتجات مختارة",
 
       "All our new arrivals in a exclusive brand selection":

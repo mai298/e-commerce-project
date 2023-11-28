@@ -36,7 +36,7 @@ export default function ProductDetails({ choosenProduct, addToCart }) {
       </Box>
 
       <Box className="pro" sx={{py:2,width:"100%", textAlign: { xs: "center", sm: "left" } }}  >
-        <Typography variant="h5">{t(choosenProduct.attributes.productTitle)}</Typography>
+        <Typography className="cardTit" variant="h5">{t(choosenProduct.attributes.productTitle)}</Typography>
         <Typography my={0.4} fontSize={"22px"} color={"crimson"} variant="h6">
           $ {choosenProduct.attributes.productPrice}
         </Typography>
@@ -83,7 +83,7 @@ export default function ProductDetails({ choosenProduct, addToCart }) {
 
         </Stack>
 
-        <Button onClick={()=>{
+        <Button className="buy" onClick={()=>{
           handleBuyNow();
           alert("item added successfully");
         }}

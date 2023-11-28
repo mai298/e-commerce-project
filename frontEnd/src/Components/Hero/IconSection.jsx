@@ -19,8 +19,6 @@ divider={ useMediaQuery("(min-width:600px)")?   <Divider orientation="vertical" 
    <MyBox icon={<WorkspacePremiumIcon/>} title={t("Money Guarantee")} subTitle={t("7 Days Back")}/>
    <MyBox icon={< AccessAlarmIcon/>} title={t("365 Days")} subTitle={t("For Free Return")}/>
    <MyBox icon={<CreditScoreIcon/>} title={t("Payment")} subTitle={t("Secure System")}/>
-
- 
 </Stack>
 
 </Container>
@@ -35,7 +33,7 @@ function MyBox({icon,title,subTitle}) {
   return (
   <Box sx={{width:"250px",display:"flex",flexGrow:1,
   alignItems:"center",
-  gap:3,
+  gap:2,
   justifyContent:"center",
   py:1.6
   }} >

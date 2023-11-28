@@ -54,12 +54,14 @@ export default function Cart({ cartItems, setCartItems }) {
         </StyledBadge>
       </IconButton>
 
-      <Dialog open={openCart} keepMounted onClose={handleClose} aria-describedby="alert-dialog-slide-description">
+      <Dialog  open={openCart} keepMounted onClose={handleClose} aria-describedby="alert-dialog-slide-description">
         <DialogTitle>{t("Cart")}</DialogTitle>
-        <DialogContent>
+        <DialogContent >
         <DialogContentText id="alert-dialog-slide-description">
         {cartItems.length === 0 ? (
-      <Typography>{t("Your cart is empty.")}</Typography>
+      <><Typography mb={2}>{t("Your cart is empty.")}</Typography>
+     <img style={{paddingLeft:"20px",  width: "20rem",height: "20rem"}} src="../assets/Wavy_Bus-44_Single-04.jpg" />
+                          </>
     ) : (
       cartItems.map((item, index) => (
         <Box key={index}>
