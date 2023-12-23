@@ -136,13 +136,18 @@ return(
       {data.data.map(item => {
   return (
 
-    <Card component={motion.section}
+    <Card  component={motion.section}
     layout
     initial={{ transform: "scale(0)" }}
     animate={{ transform: "scale(1)" }} 
   
     transition={{duration: 0.8,type:"spring"}}
-    key={item.id} sx={{ maxWidth: 333, mt: 6, ":hover .MuiCardMedia-root": {
+    key={item.id}
+     sx={{borderRadius:"1rem",
+        maxWidth: 333,
+        margin:"0 auto",
+         mt: 6, 
+        ":hover .MuiCardMedia-root": {
       scale: "1.1",
       transition: ".20s",
       rotate: "1deg"

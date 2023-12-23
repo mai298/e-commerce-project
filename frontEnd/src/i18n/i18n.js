@@ -96,8 +96,7 @@ const resources = {
       "Introducing our timeless and elegant Watch, a symbol of style and precision. This exquisite timepiece is meticulously crafted to complement your sophisticated lifestyle and elevate your wrist game.":
         "قدمنا ​​ساعة خالدة وأنيقة ، رمز للأناقة والدقة. تم صنع هذه الساعة الرائعة بعناية لتكمل أسلوب حياتك المتطور وترفع مستوى مظهر معصمك.",
 
-      "eagle T-shirt":
-        "تي شيرت برسوم النسر",
+      "ealge T-shirt":"تي شيرت برسوم النسر",
       "Introducing our Eagle Short Sleeve T-Shirt, a bold and stylish garment that showcases the majestic beauty of this iconic bird. This T-shirt is designed to make a statement and infuse your wardrobe with a touch of nature-inspired flair.":
         "قدمنا ​​تي شيرت قصيرة الأكمام برسوم النسر ، قطعة بارعة وأنيقة تُظهر جمال الطائر الأيقوني بجلاء. تم تصميم هذا التي شيرت لإيجاد بيان وإضافة لمسة من التألق المستوحى من الطبيعة إلى خزانة ملابسك.",
 
